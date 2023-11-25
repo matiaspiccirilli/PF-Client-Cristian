@@ -93,10 +93,13 @@ export const getProductsById = (id) => {
   return async (dispatch) => {
     try {
       const response = await axios.get(`${URLEXAMPLE}/products/${id}`);
+      console.log("Ya llene el producto ");
+      console.log(response.data);
       dispatch({
         type: GET_PROD_BY_ID,
         payload: response.data,
       });
+         return response.data;
     } catch (error) {
       dispatch({
         type: ERROR,
@@ -108,7 +111,12 @@ export const getProductsById = (id) => {
 export const deleteProduct = (id) => {
   return async (dispatch) => {
     try {
-      const response = await axios.delete(`${URLEXAMPLE}/products`, id);
+      const response = await axios.delete(`${URLEXAMPLE}/products`, {
+        data: { id },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       dispatch({
         type: DELETE_PRODUCT,
         payload: response.data,

@@ -1,4 +1,3 @@
-
 import {
   ERROR,
   GETALLPRODUCTS,
@@ -14,7 +13,7 @@ import {
   CREATE_PRODUCT,
   UPDATE_PRODUCT,
   DELETE_PRODUCT,
-  GET_PROD_BY_ID
+  GET_PROD_BY_ID,
 } from "../action/actionsType";
 
 const initialState = {
@@ -28,7 +27,7 @@ const initialState = {
   users: [],
   productsInCart: [],
   prodCategories: [],
-  singleProduct:'',
+  singleProduct: "",
   catchError: "",
 };
 
@@ -78,23 +77,18 @@ const reducer = (state = initialState, action) => {
       };
 
     case GET_PROD_BY_ID:
-
-      return {...state, singleProduct: action.payload};
+      console.log("Ya llene el producto ");
+      console.log(action.payload);
+      return { ...state, singleProduct: action.payload };
 
     case DELETE_PRODUCT:
       const deletedProduct = state.products.allProducts.filter((product) => {
-        return product.id != action.payload.id;
+        return product.id !== action.payload.id;
       });
-
-      // const deletedProduct = state.products.allProducts.map((product)=>{
-      //   if(product.id === action.payload.id){
-      //     product.active = false
-      //   }
-      //   return product
-      // })
       return {
-        product: {
-          ...state,
+        ...state,
+        products: {
+          ...state.products,
           allProducts: deletedProduct,
         },
       };
@@ -343,4 +337,3 @@ const reducer = (state = initialState, action) => {
   }
 };
 export default reducer;
-

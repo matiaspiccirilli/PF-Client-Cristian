@@ -5,7 +5,8 @@ const Cards = ({products}) => {
   
   return (
     <div className={styles.cardContainer}>
-      {products.map(({ id, name, brand, description, price, stock, discountPercentage,priceOnSale, image, active, tags}) => (
+      
+      {products && products.map(({ id, name, brand, description, price, stock, discountPercentage,priceOnSale, image, active, tags}) => (
         <Card
           key={id}
           productId={id}

@@ -24,6 +24,9 @@ const Card = ({
       <button>
         <Link to={`/updateProduct/${productId}`}>Update</Link>
       </button>
+      <button>
+      <Link to={`/deleteProduct/${productId}`}>Delete</Link>
+      </button>
     </div>
   );
 };
