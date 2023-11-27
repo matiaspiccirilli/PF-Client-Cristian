@@ -8,7 +8,8 @@ import DeleteProduct from "./components/deleteProduct/DeleteProduct";
 
 const App = () => {
   // url general
-  axios.defaults.baseURL = "http://localhost:3000/";
+  //axios.defaults.baseURL = "http://localhost:3000/"; // para uso local
+  axios.defaults.baseURL = "server-technook.up.railway.app"; // para deploy
 
   return (
     <div>
