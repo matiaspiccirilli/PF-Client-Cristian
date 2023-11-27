@@ -25,7 +25,8 @@
     "react-router-dom": "^6.20.0",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
-    "router-dom": "^2.2.11"
+    "router-dom": "^2.2.11",
+    "serve": "^14.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
